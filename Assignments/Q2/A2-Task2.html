@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>A2-Task2</title>
+    <!-- Styling to set width and height for images -->
+    <style>
+        img {
+            width: 350px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Container for images -->
+<div id="imageContainer">
+    <!-- Image of the sun with mouseover event -->
+    <img src="sun.jpg" alt="Sun" id="sun" onmouseover="moveToRight('sun')">
+    <!-- Image of the meadow with mouseover event -->
+    <img src="meadow.jpg" alt="Meadow" id="meadow" onmouseover="moveToRight('meadow')">
+    <!-- Image of the moon with mouseover event -->
+    <img src="moon.jpg" alt="Moon" id="moon" onmouseover="moveToRight('moon')">
+</div>
+
+<script>
+    // Function to move the image to the right within the container
+    function moveToRight(imageId) {
+        // Get references to the container and the image
+        const container = document.getElementById('imageContainer');
+        const image = document.getElementById(imageId);
+
+        // Append the image to the container, moving it to the right
+        container.appendChild(image);
+    }
+</script>
+
+</body>
+</html>

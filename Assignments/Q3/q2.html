@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Info</title>
+    <style>
+        /* Style for focused input */
+        input:focus {
+            background-color: pink;
+        }
+
+        /* Default style for the div */
+        div {
+            transition: transform 0.5s ease; /* Smooth transition for movement and skew */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Text fields and button -->
+Name: <input type="text" id="name"><br>
+Student Number: <input type="text" id="studentNumber"><br>
+Colour: <input type="color" id="colour"><br>
+Font Size: <input type="text" id="fontSize" placeholder="e.g. 16px"><br>
+<button onclick="displayInfo()">Display</button>
+
+<!-- Div for displaying info -->
+<div id="infoDiv"></div>
+
+<script>
+    function displayInfo() {
+        // Get values from text fields
+        const name = document.getElementById('name').value;
+        const studentNumber = document.getElementById('studentNumber').value;
+        const colour = document.getElementById('colour').value;
+        const fontSize = document.getElementById('fontSize').value;
+
+        // Calculate skew angle from the last 2 digits of student number
+        const skewAngle = parseInt(studentNumber.slice(-2));
+
+        // Set div styles and hover effect dynamically
+        const infoDiv = document.getElementById('infoDiv');
+        
+        infoDiv.innerHTML = `Name: ${name} <br> Student Number: ${studentNumber}`;
+        infoDiv.style.color = colour;
+        infoDiv.style.fontSize = fontSize;
+
+        // Add hover effect dynamically using event listeners
+        infoDiv.onmouseover = function() {
+            this.style.transform = `translate(50px, 50px) skew(${skewAngle}deg, 0)`;
+        };
+        
+        infoDiv.onmouseout = function() {
+            this.style.transform = 'none'; // Reset to default position when not hovering
+        };
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+    "CarServiceRepository": {
+      "Station": "Wollongong",
+      "Cars": [
+        {
+          "Plate": "CL-29-28",
+          "Model": "Nissan X-Trail",
+          "Year": 2020,
+          "ServiceCard": [
+            {
+              "Date": "15/09/2021",
+              "Service": "100000km"
+            },
+            {
+              "Date": "21/08/2022",
+              "Service": "200000km"
+            },
+            {
+              "Date": "15/07/2023",
+              "Service": "300000km"
+            }
+          ]
+        },
+        {
+          "Plate": "PYU-880",
+          "Model": "BMW 330i",
+          "Year": 2017,
+          "ServiceCard": [
+            {
+              "Date": "23/04/2019",
+              "Service": "100000km"
+            },
+            {
+              "Date": "28/06/2020",
+              "Service": "250000km"
+            },
+            {
+              "Date": "01/08/2022",
+              "Service": "400000km"
+            }
+          ]
+        }
+      ]
+    }
+  }
+

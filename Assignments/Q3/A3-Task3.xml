@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE cinemas [
+  <!ELEMENT cinemas (search, cinema+)>
+  <!ELEMENT search (#PCDATA)>
+  <!ELEMENT cinema (date, movie+)>
+  <!ELEMENT date (#PCDATA)>
+  <!ELEMENT movie (title, time, price)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT time (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST cinema name CDATA #REQUIRED>
+]>
+
+<cinemas>
+  <search>top 3 cinemas near me</search>
+  <cinema name="Hoyts Warrawong">
+    <date>20/09/2023</date>
+    <movie>
+      <title>Teenage Mutant Ninja Turtles: Mutant Mayhem</title>
+      <time>12:40pm</time>
+      <price>$24.50</price>
+    </movie>
+    <movie>
+      <title>The Equalizer 3</title>
+      <time>7.30pm</time>
+      <price>$21.50</price>
+    </movie>
+    <movie>
+      <title>My Big Fat Greek Wedding 3</title>
+      <time>10am</time>
+      <price>$17.50</price>
+    </movie>
+  </cinema>
+
+  <cinema name="Event Cinemas Liverpool">
+    <date>20/09/2023</date>
+    <movie>
+      <title>Miss Shetty Mr Polishetty</title>
+      <time>09:00pm</time>
+      <price>$14.50</price>
+    </movie>
+    <movie>
+      <title>Meg 2: The TrenchM</title>
+      <time>7.00pm</time>
+      <price>$21.00</price>
+    </movie>
+  </cinema>
+
+  <cinema name="Event Cinemas Shellharbour">
+    <date>20/09/2023</date>
+    <movie>
+      <title>Barbie</title>
+      <time>6.30pm</time>
+      <price>$21</price>
+    </movie>
+    <movie>
+      <title>Oppenheimer</title>
+      <time>7.15pm</time>
+      <price>$16</price>
+    </movie>
+  </cinema>
+</cinemas>

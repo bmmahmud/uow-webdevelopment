@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <title>A2-Task1</title>
+</head>
+<body>
+<!-- Buttons that trigger various actions -->
+<button onclick="addFive()">Add 5</button> <!-- Button 1 -->
+<button onclick="changeColor()">Change colour</button> <!-- Button 2 -->
+<button onclick="addEmoji()">Add emoji</button> <!-- Button 3 -->
+<button onclick="resetSpan()">Reset</button> <!-- Button 4 -->
+
+<!-- Span elements to display randon number and emoji -->
+<span id="numberSpan" style="color: red;"></span> <!--  display randon number with red color -->
+<span id="emojiSpan"></span> <!-- display emojis -->
+
+<!-- JavaScript -->
+    <script>
+        // Array of emojis and a counter to keep track of current emoji index
+        let emojis = ["⚽", "🏆"];
+        let emojiCount = 0;
+
+        // Get references to the span elements in the HTML
+        let numberSpan = document.getElementById("numberSpan");
+        let emojiSpan = document.getElementById("emojiSpan");
+
+        // Generate a random 4-digit number and display it initially
+        function randomFourDigit() {
+            return Math.floor(1000 + Math.random() * 9000);
+        }
+        // passes random number from the fuction to the Span section
+        numberSpan.textContent = randomFourDigit(); // textContent = return the value
+
+        // Function to add 5 to the displayed number
+        function addFive() {
+            numberSpan.textContent = parseInt(numberSpan.textContent) + 5; // Parse the string into an integer
+        }
+        // Function to change the color of the number to a random color from the list
+        function changeColor() {
+            const colors = ["red", "yellow", "green", "blue"];
+            numberSpan.style.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Function to add an emoji to the emoji span
+        function addEmoji() {
+            emojiSpan.textContent += emojis[emojiCount % 2];
+            emojiCount++;
+        }
+
+        // Function to reset the number and emoji spans, and the color of the number
+        function resetSpan() {
+            numberSpan.textContent = randomFourDigit();
+            emojiSpan.textContent = "";
+            emojiCount = 0;
+            numberSpan.style.color = "red";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment-A03-01</title>
+</head>
+<body>
+    <h3>Assignment-A03-01</h3>
+    <!-- Text fields for user input -->
+    Initial Value: <input type="number" id="initialValue" value="0"><br>
+    Increase By: <input type="number" id="increaseValue" value="0"><br>
+    Interval (ms): <input type="number" id="intervalValue" value="0"><br>
+
+    <!-- Start and Stop buttons -->
+    <button onclick="startAnimation()">Start</button>
+    <button onclick="stopAnimation()">Stop</button>
+
+    <!-- Div to display the animated number -->
+    <div id="displayNumber" style="font-size: 5em; font-weight: bold;"></div>
+
+<!-- JavaScript Start here -->
+    <script>
+        let interval; // For storing the animation interval
+        const colors = ["yellow", "pink", "orange", "blue"]; // Predefined colors
+
+        function startAnimation() {
+            // Getting values from the text fields
+            let number = parseInt(document.getElementById('initialValue').value) || 0;
+            const increaseBy = parseInt(document.getElementById('increaseValue').value) || 0;
+            const intervalValue = parseInt(document.getElementById('intervalValue').value) || 0;
+
+            // If there's an existing animation, clear it
+            if (interval) {
+                clearInterval(interval);
+            }
+            
+            // First display of the number in green
+            document.getElementById('displayNumber').innerText = number;
+            document.getElementById('displayNumber').style.color = 'green';
+
+            // Start the animation
+            interval = setInterval(() => {
+                // Increase the number
+                number += increaseBy;
+
+                // Display the increased number in a random color from the list
+                document.getElementById('displayNumber').innerText = number;
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                document.getElementById('displayNumber').style.color = randomColor;
+            }, intervalValue);
+        }
+
+        function stopAnimation() {
+            // Stop the animation
+            clearInterval(interval);
+
+            // Clear the text fields
+            document.getElementById('initialValue').value = '';
+            document.getElementById('increaseValue').value = '';
+            document.getElementById('intervalValue').value = '';
+        }
+    </script>
+</body>
+</html>

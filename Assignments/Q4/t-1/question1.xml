@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CarServiceRepository>
+    <ServiceStation location="Wollongong">
+        <Car>
+            <Model>Nissan X-Trail</Model>
+            <Year>2020</Year>
+            <ServiceHistory>
+                <Service date="2021-05-20" mileage="10000"/>
+                <Service date="2022-05-20" mileage="20000"/>
+            </ServiceHistory>
+        </Car>
+        <Car>
+            <Model>BMW 330i</Model>
+            <Year>2017</Year>
+            <ServiceHistory>
+                <Service date="2018-02-28" mileage="15000"/>
+                <Service date="2019-02-28" mileage="30000"/>
+                <Service date="2020-02-28" mileage="45000"/>
+                <Service date="2021-02-28" mileage="60000"/>
+            </ServiceHistory>
+        </Car>
+    </ServiceStation>
+</CarServiceRepository>

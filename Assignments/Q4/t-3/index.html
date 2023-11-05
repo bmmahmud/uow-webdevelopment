@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h2 {
+            font-weight: bold; /* Make the h2 text bold */
+        }
+        input {
+            margin-bottom: 10px; /* Add space below each input box */
+        }
+    </style>
+</head>
+<body>
+    <h2>Discount Calculator</h2> 
+    <label for="product">product:</label> 
+    <input type="text" id="product" name="product"><br> 
+    
+    <label for="price">price $:</label> 
+    <input type="number" id="price" name="price"><br> 
+    
+    <label for="discount">discount %:</label> 
+    <input type="number" id="discount" name="discount"><br> 
+    
+    <button onclick="calculate()">calculate</button> 
+    <ol id="productList"></ol> <!-- Ordered list to display the products and their discounts -->
+    <p id="totalDiscount"></p> <!-- Paragraph to display the total discount -->
+    <script>
+        var totalDiscount = 0; // Variable to store the total discount
+        var totalProducts = 0; // Variable to store the total number of products
+
+        function calculate() { // Function to calculate the discount
+            // Get the product, price, discount  input
+            var product = document.getElementById("product"); 
+            var price = document.getElementById("price"); 
+            var discount = document.getElementById("discount"); 
+
+            var discountedPrice = price.value - (price.value * (discount.value / 100)); // Calculate the discounted price
+            totalDiscount += price.value - discountedPrice; // Add the discount to the total discount
+            totalProducts++; // Increase the total number of products
+
+            var node = document.createElement("LI"); // Create a new list item
+            var textnode = document.createTextNode(product.value + " - price $" + price.value + ", after discount of " + discount.value + "%, the price is $" + discountedPrice.toFixed(2)); // Create the text for the list item
+            node.appendChild(textnode); // Add the text to the list item
+            document.getElementById("productList").appendChild(node); // Add the list item to the product list
+
+            document.getElementById("totalDiscount").innerHTML = "Overall discount for " + totalProducts + " products is $" + totalDiscount.toFixed(2); // Display the total discount
+
+            // Clear the input fields
+            product.value = ""; 
+            price.value = ""; 
+            discount.value = ""; 
+        }
+    </script>
+</body>
+</html>

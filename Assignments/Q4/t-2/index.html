@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Service Repository</title>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        /* CSS styles for the h3 and .bold elements */
+        body {
+        font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Button that triggers the AJAX request when clicked -->
+    <button id="get-data">Get Car Service Repository</button>
+    <!-- Div where the data will be displayed -->
+    <div id="output"></div>
+
+    <script>
+        // Wait until the document is fully loaded
+        $(document).ready(function() {
+            // Attach a click event handler to the button
+            $('#get-data').click(function() {
+                // Send an AJAX request
+                $.ajax({
+                    url: 'question2.json',  // URL of the JSON file
+                    type: 'GET',  // HTTP method
+                    dataType: 'json',  // Expected data type
+                    success: function(data) {  // Function to handle the data on success
+                        // Start building the HTML string
+                        var html = '<h2>Car service repository</h2>';
+                        html += '<div style="font-size: 20px;"><i><p><span class="bold">Car Service Station:</span> ' + data.CarServiceRepository.Station + '</p></i></div>';
+                        // Loop through each car in the data
+                        data.CarServiceRepository.Cars.forEach(function(car) {
+                            // Add the car's details to the HTML string
+                            html += '<p style="padding-left: 20px;"><span class="bold">Car Plate:</span> ' + car.Plate + '</p>';
+                            html += '<p style="padding-left: 20px;"><span class="bold">Model:</span> ' + car.Model + '</p>';
+                            html += '<p style="padding-left: 20px;"><span class="bold">Year:</span> ' + car.Year + '</p>';
+                            html += '<p style="padding-left: 20px;"><span class="bold">Service Card:</span></p>';
+                            // Loop through each service in the car's service card
+                            car.ServiceCard.forEach(function(service) {
+                                // Add the service's details to the HTML string
+                                html += '<ul style="padding-left: 120px;"><li>' + service.Date + ', Service ' + service.Service + '</li></ul>';
+                            });
+                        });
+                        // Insert the HTML string into the #output div
+                        $('#output').html(html);
+                    },
+                    error: function() {  // Function to handle errors
+                        alert('Error retrieving data');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
