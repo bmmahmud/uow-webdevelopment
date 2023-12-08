@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>
+            W6-Question:1
+        </title>
+    </head>
+    <body>
+        <label>Please select 4 subjets</label>
+
+        <form id="subjectsForm" type="post" action="" onsubmit="displaySubjects()">
+            <table>
+                <tr>
+                    <td>
+                        Subject 1:
+                    </td>
+                    <td>
+                        <input id="subject_1" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Subject 2:
+                    </td>
+                    <td>
+                        <input id="subject_2" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Subject 3:
+                    </td>
+                    <td>
+                        <input id="subject_3" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Subject 4:
+                    </td>
+                    <td>
+                        <input id="subject_4" type="text" required>
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <h3 id="selectedSubjectTxt"></h3>
+        <script>
+
+            function displaySubjects(){
+                event.preventDefault();
+                let subjectsForm = document.getElementById('subjectsForm');
+                let selectedSubjectTxt = document.getElementById('selectedSubjectTxt');
+                selectedSubjectTxt.innerHTML = `You have selected ${subjectsForm.elements['subject_1'].value}, ${subjectsForm.elements['subject_2'].value}, ${subjectsForm.elements['subject_3'].value}, ${subjectsForm.elements['subject_4'].value}`
+            }
+         </script>
+    </body>
+</html>

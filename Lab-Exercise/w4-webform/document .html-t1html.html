@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whosville College Library Search</title>
+</head>
+<body>
+
+<form action="http://library.whosville/bsearch" method="GET">
+    <!-- Author input -->
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author">
+    <br><br>
+
+    <!-- Year input -->
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year">
+    <br><br>
+
+    <!-- Subjects -->
+    <label>Subjects:</label><br>
+    <input type="checkbox" id="mth" name="sub" value="mth">
+    <label for="mth">Mathematics</label><br>
+    
+    <input type="checkbox" id="cs" name="sub" value="cs">
+    <label for="cs">Computer Science</label><br>
+    
+    <input type="checkbox" id="bio" name="sub" value="bio">
+    <label for="bio">Biology</label><br>
+    
+    <input type="checkbox" id="phy" name="sub" value="phy">
+    <label for="phy">Physics</label><br>
+    
+    <input type="checkbox" id="chem" name="sub" value="chem">
+    <label for="chem">Chemistry</label><br><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="Search">
+</form>
+
+</body>
+</html>

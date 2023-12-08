@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ebay Search</title>
+</head>
+
+<body>
+    <h1>Ebay search</h1>
+
+    <form id="ebaySearch" method="GET" onsubmit="Search(); return false;">
+        <table>
+            <tr>
+                <td>Keyword:</td>
+                <td><input id="searchText" type="text"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="art" name="categorie" value="550">
+                    <label for="art">Art</label><br>
+                    <input type="radio" id="book_mag" name="categorie" value="267">
+                    <label for="book_mag">Book and Magazine</label><br>
+                    <input type="radio" id="coins" name="categorie" value="11116">
+                    <label for="coins">Coins</label><br>
+                    <input type="radio" id="music" name="categorie" value="11233">
+                    <label for="music">Music</label><br>
+                    <input type="radio" id="stamps" name="categorie" value="260">
+                    <label for="stamps">Stamps</label><br>
+                    <input type="radio" id="all_cat" name="categorie" value="0" checked="checked">
+                    <label for="all_cat">All categories</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function Search() {
+            event.preventDefault();
+
+            const searchText = document.getElementById('searchText').value;
+            let selectedCategorie;
+            const categorie = document.getElementsByName('categorie');
+
+            for (let i = 0; i < categorie.length; i++) {
+                if (categorie[i].checked) {
+                    selectedCategorie = categorie[i].value;
+                    break;
+                }
+            }
+
+            const queryParams = new URLSearchParams();
+
+            queryParams.append('_from', '_R40');
+            queryParams.append('_trksid', 'p4432023.m570.l1313');
+            queryParams.append('_nkw', searchText);
+            queryParams.append('_sacat', selectedCategorie);
+
+            const queryString = queryParams.toString();
+            const url = `https://www.ebay.com.au/sch/i.html?${queryString}`;
+
+            // Redirect the user to the eBay search results
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>

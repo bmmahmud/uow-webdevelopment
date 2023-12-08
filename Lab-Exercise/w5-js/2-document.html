@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+        <title>W6-Q2</title>
+</head>
+<body>
+    <div id="calculator">
+        <input type="number" id="num1" placeholder="Enter first number">
+
+        <select id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="x">x</option>
+        </select>
+
+        <input type="number" id="num2" placeholder="Enter second number">
+        
+        <input type="number" id="answer" placeholder="Enter your answer">
+        <button onclick="checkAnswer()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value;
+            const userAnswer = parseFloat(document.getElementById('answer').value);
+           
+            let correctAnswer;
+
+            switch(operation) {
+                case '+':
+                    correctAnswer = num1 + num2;
+                    break;
+                case '-':
+                    correctAnswer = num1 - num2;
+                    break;
+                case 'x':
+                    correctAnswer = num1 * num2;
+                    break;
+                default:
+                    correctAnswer = NaN;
+            }
+
+            const resultElement = document.getElementById('result');
+
+            if(userAnswer === correctAnswer) {
+                resultElement.textContent = "Correct!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Incorrect! The correct answer is " + correctAnswer;
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

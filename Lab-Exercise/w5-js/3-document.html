@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>
+        W6-Q3
+    </title>
+</head>
+<body>
+        <input type="button" value="Increase Counter" onclick="increment()">
+
+    <p id="count"></p>
+
+<script>
+    document.getElementById('count').innerHTML = 0;
+    var count = 0;
+    function increment() {
+      count++;
+      document.getElementById('count') .innerHTML = count;
+    }
+</script>
+
+</body>
+</html>
