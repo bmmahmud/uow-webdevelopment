@@ -6,9 +6,9 @@ lab exercise. In this repo I have organised them for future help.
 
 ## List
 ### Assignment
-	Quiz 1: 
-		* Task 1: A Table of Events details
-		* Task 2: Top 10 Movies in Australia
+ Quiz 1: 
+  * Task 1: A Table of Events details
+  * Task 2: Top 10 Movies in Australia
 	Quiz 2:
 		* Task 1: In the webpage, display 4 buttons "Add 5", "Change colour", "Add emoji" and "Reset", and a span.
 		* Task 2: The webpage displays three images. Each time the user moves the mouse over one of the images, the order of the images is changed. 
