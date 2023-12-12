@@ -3,6 +3,9 @@ Subject work of Web developemnt Spring 2023 at UOW
 ## Description
 While doing Web Development subject for my Master's degree at UOW I did a lot of assignments and 
 lab exercises. In this repo, I have organized them for future help.
+I learned a basic foundation of Web development and also how to create dynamic web pages using HTML, CSS, and JavaScript. This subject teaches me how to document 
+structured data for Web development, focusing on the two most popular structured data formats: JSON and XML. Now, I can create interactive web applications with AJAX.
+
 
 ## List
 ### Assignment
