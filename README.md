@@ -10,12 +10,12 @@ lab exercises. In this repo, I have organized them for future help.
    Task 1: A Table of Events details
    Task 2: Top 10 Movies in Australia
 #### Quiz 2:
-   Task 1: In the webpage, display 4 buttons "Add 5", "Change colour", "Add emoji" and "Reset", and a span.
-   Task 2: The webpage displays three images. Each time the user moves the mouse over one of the images, the order of the images is changed. 
+ Task 1: In the webpage, display 4 buttons "Add 5", "Change colour", "Add emoji" and "Reset", and a span.
+ Task 2: The webpage displays three images. Each time the user moves the mouse over one of the images, the order of the images is changed. 
 #### Quiz 3:
-   Task 1: a webpage (as shown below) that has three text fields and two buttons 'Start' and 'Stop'. The webpage should display animation by increasing the number and changing its colour.
-   Task 2: Have to Create a webpage "My info". The webpage should have 4 text fields (name, student number, colour and font size), one button (Display), and one div element.
-   Task 3: Writing an XML document.
+ Task 1: a webpage (as shown below) that has three text fields and two buttons 'Start' and 'Stop'. The webpage should display animation by increasing the number and changing its colour.
+ Task 2: Have to Create a webpage "My info". The webpage should have 4 text fields (name, student number, colour and font size), one button (Display), and one div element.
+ Task 3: Writing an XML document.
 #### Quiz 4:
    Task 1: Write an XML file (with NO stylesheet) 
    Task 2: Write a JSON file called question2.json that contains some information.
